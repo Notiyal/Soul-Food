@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Group7_FinalProject.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soul Foods</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+</head>
+<body class="text-white">
+    <form id="form1" runat="server">
+        <header>
+            <!-- Header section with logo and navigation links -->
+            <a href="Default.aspx" class="logo">SOUL FOODS</a>
+            <div class="header-right">
+
+                <% if (Session["UserType"] != null)
+                    { %>
+                <% if (Session["UserType"].ToString() == "Admin")
+                    { %>
+                <a href="Default.aspx">Home</a>
+                <a href="Admin.aspx">Admin Panel</a>
+                <a href="Logout.aspx">Logout</a>
+                <% }
+                    else if (Session["UserType"].ToString() == "Customer")
+                    { %>
+                <a href="Default.aspx">Home</a>
+                <a href="Menu.aspx">Menu</a>
+                <a href="Cart.aspx">Cart</a>
+                <a href="Logout.aspx">Logout</a>
+                <% } %>
+                <% }
+                else
+                { %>
+                <a href="Login.aspx">Login</a>
+                <% } %>
+            </div>
+
+        </header>
+        <div class="container">
+
+            <asp:ContentPlaceHolder ID="mainPlaceholder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <p>&copy; 2023 Group 7 Soul Foods</p>
+            <p>Shweta [8877045] | Susmi [8866685] | Harsha [8847377] | Riya [8876616]</p>
+        </footer>
+    </form>
+</body>
+
+</html>

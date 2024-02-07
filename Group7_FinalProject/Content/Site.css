@@ -1,0 +1,164 @@
+﻿body {
+    background-image: url('../images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    margin-top: 1em;
+}
+
+
+.form-control {
+    background-color: #aaa8a6b8;
+    color: white;
+}
+
+.btn {
+    --b: 3px; /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: white;
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background: conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    color: white;
+    background-color: #808000de;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+    .btn:hover,
+    .btn:focus-visible {
+        --_p: 0px;
+        outline-color: var(--color);
+        outline-offset: .05em;
+        background-color: #808000;
+    }
+
+    .btn:active {
+        background: var(--color);
+        color: #fff;
+    }
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3e352e;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+header {
+    overflow: hidden;
+    background-color: #3e352e;
+    padding: 20px 100px;
+}
+
+    header a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 25px;
+        border-radius: 4px;
+    }
+
+        header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+
+
+        header a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+.header-right {
+    float: right;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.logo {
+    font-family: Copperplate, Papyrus, fantasy;
+    letter-spacing: 0.1em;
+}
+
+main {
+    color: white;
+}
+
+
+.glass {
+    width: 70rem;
+    height: 20rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+    .glass:before {
+        content: "";
+        position: absolute;
+        background: inherit;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+        filter: blur(10px);
+        margin: -20px;
+    }
+
+.subContainer h1, h4 {
+    text-align: center;
+    padding: 20px;
+    font-family: cursive;
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-danger {
+    background-color: #000000db;
+}
+img {
+    width:200px;
+    filter: drop-shadow(7px 7px 7px white);
+}
